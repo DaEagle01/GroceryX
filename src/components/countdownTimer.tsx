@@ -3,20 +3,27 @@
 import { useState, useEffect } from 'react';
 
 const CountdownTimer = () => {
-    const [time, setTime] = useState(() => {
-        const startTime = localStorage.getItem('startTime');
-        const now = Date.now();
-
-        if (startTime) {
-            const elapsed = Math.floor((now - Number(startTime)) / 1000);
-            return Math.max(24 * 60 * 60 - elapsed, 0);
-        } else {
-            localStorage.setItem('startTime', String(now));
-            return 24 * 60 * 60;
-        }
-    });
+    const [time, setTime] = useState(24 * 60 * 60);
 
     useEffect(() => {
+        const getStartTime = () => {
+            if (typeof window !== 'undefined') {
+                const startTime = localStorage.getItem('startTime');
+                const now = Date.now();
+
+                if (startTime) {
+                    const elapsed = Math.floor((now - Number(startTime)) / 1000);
+                    return Math.max(24 * 60 * 60 - elapsed, 0);
+                } else {
+                    localStorage.setItem('startTime', String(now));
+                    return 24 * 60 * 60;
+                }
+            }
+            return 24 * 60 * 60;
+        };
+
+        setTime(getStartTime());
+
         const intervalId = setInterval(() => {
             setTime(prevTime => prevTime > 0 ? prevTime - 1 : 0);
         }, 1000);
