@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Product } from "@/types";
 
 const FlashSalePage = async () => {
-    const response = await fetch("http://localhost:5000/api/v1/products", {
+    const response = await fetch(`${process.env.SERVER_URL}/api/v1/products`, {
         cache: "no-cache"
     });
     const products = await response.json() as Product[];

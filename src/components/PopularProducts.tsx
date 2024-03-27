@@ -6,7 +6,7 @@ import { Product } from '@/types'
 import Link from 'next/link'
 
 const PopularProducts = async () => {
-    const response = await fetch("http://localhost:5000/api/v1/products", {
+    const response = await fetch(`${process.env.SERVER_URL}/api/v1/products`, {
         next: {
             revalidate: 30
         }

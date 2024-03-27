@@ -14,7 +14,7 @@ import dummyFish from "../../../../../public/dummyFish.svg";
 import ReviewStar from '@/components/ReviewStar';
 
 export async function generateStaticParams() {
-    const response = await fetch("http://localhost:5000/api/v1/products");
+    const response = await fetch(`${process.env.SERVER_URL}/api/v1/products`);
     const products = (await response.json()) as Product[];
 
     return products.slice(0, 10).map((product) => ({
@@ -24,7 +24,7 @@ export async function generateStaticParams() {
 
 const SingleFishDetail = async ({ params }: { params: { id: string } }) => {
     const { id } = params;
-    const response = await fetch(`http://localhost:5000/api/v1/products/${id}`);
+    const response = await fetch(`${process.env.SERVER_URL}/api/v1/products/${id}`);
     const product = (await response.json()) as Product;
     return (
         <div className="max-w-[90rem] mx-auto px-4 lg:px-20 pt-8 pb-[230px]">

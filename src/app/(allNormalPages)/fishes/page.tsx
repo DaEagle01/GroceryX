@@ -14,7 +14,7 @@ const Fishes = async ({
     const queries = new URLSearchParams(searchParams);
     const filters = queries.toString();
     const response = await fetch(
-        `http://localhost:5000/api/v1/products?${filters}`,
+        `${process.env.SERVER_URL}/api/v1/products?${filters}`,
         {
             cache: "no-cache",
         }

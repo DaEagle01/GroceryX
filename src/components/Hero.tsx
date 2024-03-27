@@ -3,7 +3,7 @@ import ProductsCarousel from "./ProductsCarousel";
 import { Product } from "@/types";
 
 const Hero = async () => {
-    const response = await fetch("http://localhost:5000/api/v1/products");
+    const response = await fetch(`${process.env.SERVER_URL}/api/v1/products`);
     const products = await response.json() as Product[];
     return (
         <div className="max-w-[90rem] mx-auto pt-[5.5rem] pb-16 relative">

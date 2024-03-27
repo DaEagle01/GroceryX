@@ -12,7 +12,7 @@ import Image from "next/image";
 import dummyFish from "../../../../public/dummyFish.svg";
 
 const AllProducts = async () => {
-    const response = await fetch("http://localhost:5000/api/v1/products", {
+    const response = await fetch(`${process.env.SERVER_URL}/api/v1/products`, {
         cache: "no-cache"
     });
     const products = await response.json() as Product[];
