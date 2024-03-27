@@ -8,7 +8,7 @@ import Link from "next/link";
 const ProductCard = ({ product, heroProduct, pageName }: { product: Product, heroProduct?: boolean, pageName?: string }) => {
 
     return (
-        <Link href={`fish/${product.objectID}`}>
+        <Link href={`fishes/${product.objectID}`}>
             <div className="relative rounded-xl flex flex-col justify-between ">
                 <div className="relative flex justify-center">
                     {product?.picturesUrls?.length ? (

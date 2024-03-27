@@ -4,13 +4,13 @@ export interface Product {
   name: string;
   nameWithoutSubText: string;
   subText: string;
-  rating: string;
+  rating: number;
   category: string;
   flashSale: boolean;
   mrp: number;
   corpPrice: number;
   price: number;
-  shortDesc: string | null;
+  shortDesc: string;
   longDesc: string;
   slug: string;
   doNotApplyDiscounts: number;
