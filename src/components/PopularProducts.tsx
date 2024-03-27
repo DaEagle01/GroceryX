@@ -1,7 +1,6 @@
 import React from 'react'
 import { Button } from './ui/button'
 import { ChevronRight } from 'lucide-react'
-import { staticProducts } from '@/constants'
 import ProductCard from './shared/ProductCard'
 import { Product } from '@/types'
 import Link from 'next/link'
