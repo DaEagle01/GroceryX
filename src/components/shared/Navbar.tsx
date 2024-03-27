@@ -32,7 +32,7 @@ const Navbar = () => {
                         publicRoutes.map(route => (
                             <Link key={route.path} href={route.path} className={cn("text-xs lg:text-base font-semibold leading-5 group flex flex-col mt-[2px]")}>
                                 <p>{route.name}</p>
-                                <span className="mt-[1px] h-[3px] w-[0px] rounded-full bg-green-700 transition-all duration-300 group-hover:w-full"></span>
+                                <span className="mt-[1px] h-[3px] w-[0px] rounded-full bg-green-500 transition-all duration-300 group-hover:w-full"></span>
                             </Link>
                         ))
                     }

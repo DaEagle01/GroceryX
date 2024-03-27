@@ -1,18 +1,10 @@
-'use client';
-
 import Link from "next/link";
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-} from "@/components/ui/carousel"
-import Autoplay from "embla-carousel-autoplay"
-import ProductCard from "./shared/ProductCard";
-import { staticProducts } from "@/constants";
+import ProductsCarousel from "./ProductsCarousel";
+import { Product } from "@/types";
 
-const Hero = () => {
+const Hero = async () => {
+    const response = await fetch("http://localhost:5000/api/v1/products");
+    const products = await response.json() as Product[];
     return (
         <div className="max-w-[90rem] mx-auto pt-[5.5rem] pb-16 relative">
             <div className="flex flex-col justify-center items-center mb-8 w-full text-center sm:mb-16">
@@ -23,10 +15,10 @@ const Hero = () => {
                     Delight in Every Dish!
                 </h1>
                 <p className="text-center mb-6 max-w-[48%] text-base text-[#636262] md:mb-12">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fringilla nunc in molestie feugiat. Nunc auctor consectetur elit, quis pulvina. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fringilla nunc in molestie feugiat
+                    GroceryX: Your online marketplace for all things fish! From the tranquility of rivers to the depths of oceans, we’ve got it all. Cast your net into our abundant selection and let your kitchen tell a delightful, fish-filled story!
                 </p>
                 <div className="flex items-center justify-center">
-                    <Link href='/products'>
+                    <Link href='/fishes'>
                         <button className="w-48 h-16 border-2 border-green-300 text-green-800 font-black rounded-full hover:text-white duration-300 relative group">
                             <span className="absolute w-11 group-hover:w-[91%] duration-300 flex group-hover:justify-start rounded-full inset-2 bg-green-300 group-hover:bg-green-500 group-hover:duration-500 -z-10"></span>
                             Explore Groceries
@@ -35,29 +27,7 @@ const Hero = () => {
                 </div>
             </div>
             <div className="mx-auto w-[70%]">
-                <Carousel
-                    opts={{
-                        align: "start",
-                        loop: true,
-
-                    }}
-                    plugins={[
-                        Autoplay({
-                            delay: 4000,
-                        }),
-                    ]}
-                    className="w-full"
-                >
-                    <CarouselContent className="ml-1">
-                        {staticProducts.map((product, index) => (
-                            <CarouselItem key={product.name} className="md:basis-1/2 lg:basis-[32%] p-3 border rounded-lg ml-4">
-                                <ProductCard product={product} heroProduct />
-                            </CarouselItem>
-                        ))}
-                    </CarouselContent>
-                    <CarouselPrevious className="bg-green-400 text-white" />
-                    <CarouselNext className="bg-green-400 text-white" />
-                </Carousel>
+                <ProductsCarousel products={products} />
             </div>
         </div>
     );
