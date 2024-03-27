@@ -13,13 +13,13 @@ const FlashSale = async () => {
     const products = await response.json() as Product[];
 
     return (
-        <div className="max-w-[90rem] mx-auto px-4 lg:px-20 pt-[106px] pb-[170px]">
+        <div className="max-w-[90rem] mx-auto px-4 lg:px-20 pt-12 sm:pt-[106px] pb-20 sm:pb-[170px]">
             <div className="flex justify-between items-center mb-9">
-                <h1 className="text-4xl font-bold">
+                <h1 className="text-2xl sm:text-4xl font-bold">
                     Flash Sale
                 </h1>
                 <Link href="/flash-sale">
-                    <Button className="font-semibold text-xl text-white bg-green-600 hover:bg-green-500 px6 py-4 rounded-full">
+                    <Button className="font-semibold text-lg sm:text-xl text-white bg-green-600 hover:bg-green-500 px6 py-4 rounded-full">
                         See All <ChevronRight className="ml-2" strokeWidth={3} />
                     </Button>
                 </Link>

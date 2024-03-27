@@ -13,22 +13,18 @@ const OurCustomerCompanies = () => {
         "https://assets.website-files.com/6357722e2a5f19121d37f84d/635b3fe26718fe228c33ca3b_Microsoft%20Logo.svg",
     ]
     return (
-        <div>
-            <section>
-                <div className="">
-                    <div className="grid grid-cols-4 items-center justify-center gap-8 rounded-md bg-green-50 p-16 px-8 py-12 sm:grid-cols-8 md:gap-16">
-                        {companyLogos.map(logo => (
-                            <div key={logo} className="relative flex items-center justify-center p-4">
-                                <Image
-                                    src={logo}
-                                    layout="fill"
-                                    alt="logo"
-                                />
-                            </div>
-                        ))}
+        <div className="">
+            <div className="grid grid-cols-4 items-center justify-center gap-8 rounded-md bg-green-50 p-16 px-8 py-8 sm:py-12 sm:grid-cols-8 md:gap-16">
+                {companyLogos.map(logo => (
+                    <div key={logo} className="relative flex items-center justify-center p-2 sm:p-4">
+                        <Image
+                            src={logo}
+                            layout="fill"
+                            alt="logo"
+                        />
                     </div>
-                </div>
-            </section>
+                ))}
+            </div>
         </div>
     );
 };

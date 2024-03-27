@@ -19,7 +19,7 @@ import { publicRoutes } from "@/constants";
 const Navbar = () => {
 
     return (
-        <header className="fixed z-[9999] top-0 h-12 sm:h-16 py-4 sm:py-6 w-full bg-white border-b rounded-br-md rounded-bl-md shadow-sm">
+        <header className="fixed z-[999] top-0 h-12 sm:h-16 py-4 sm:py-6 w-full bg-white border-b rounded-br-md rounded-bl-md shadow-sm">
             <nav className="w-full h-full max-w-[90rem] mx-auto flex justify-between sm:justify-start items-center px-4 lg:px-20">
                 <Link href="/" className='flex items-center gap-3'>
                     <Image className="h-full rounded-md" width={40} height={40} src={logo} alt="" />
@@ -44,7 +44,7 @@ const Navbar = () => {
                                 <HiOutlineMenuAlt3 size={24} />
                             </button>
                         </SheetTrigger>
-                        <SheetContent className="w-1/2">
+                        <SheetContent className="w-1/2 z-[1000]">
                             <ul className="menu p-4 w-full min-h-full text-base-content space-y-2">
                                 {
                                     publicRoutes.map(route => (

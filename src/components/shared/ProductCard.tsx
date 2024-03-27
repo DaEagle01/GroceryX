@@ -28,7 +28,7 @@ const ProductCard = ({ product, heroProduct, pageName }: { product: Product, her
                     )}
                 </div>
                 <div className="p-3 flex flex-col gap-3">
-                    <h3 className="text-gray-700 font-medium text-xl">
+                    <h3 className="text-gray-700 font-medium text-base sm:text-xl">
                         {product.name}
                     </h3>
                     <div className="flex items-center justify-between">

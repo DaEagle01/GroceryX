@@ -13,17 +13,17 @@ const PopularProducts = async () => {
     });
     const products = await response.json() as Product[];
     return (
-        <div className="max-w-[90rem] mx-auto px-4 lg:px-20 pb-[170px]">
-            <div className="flex justify-between items-center mb-10">
+        <div className="max-w-[90rem] mx-auto px-4 lg:px-20 pb-20 sm:pb-[170px]">
+            <div className="flex flex-col sm:flex-row justify-between items-center mb-10">
                 <div>
-                    <h1 className="text-4xl font-bold mb-5">
+                    <h1 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-5 text-center sm:text-left">
                         Trending  Products
                     </h1>
-                    <p className="text-base font-normal text-gray-600 max-w-[60%]">
+                    <p className="text-base font-normal text-gray-600 max-w-[90%] sm:max-w-[60%] mx-auto sm:mx-0 text-center sm:text-left">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fringilla nunc in molestie feugiat. Nunc auctor consectetur elit, quis pulvina.
                     </p>
                 </div>
-                <Link href="/fishes">
+                <Link href="/fishes" className='hidden sm:block'>
                     <Button className="font-semibold text-xl text-white bg-green-600 hover:bg-green-500 px6 py-4 rounded-full">
                         See All Products <ChevronRight className="ml-2" strokeWidth={3} />
                     </Button>
@@ -40,6 +40,11 @@ const PopularProducts = async () => {
                             </div>
                         ))}
                 </div>
+                <Link href="/fishes" className='flex sm:hidden mt-8 justify-center'>
+                    <Button className="font-semibold text-xl text-white bg-green-600 hover:bg-green-500 px6 py-4 rounded-full">
+                        See All Products <ChevronRight className="ml-2" strokeWidth={3} />
+                    </Button>
+                </Link>
             </div>
         </div>
     )

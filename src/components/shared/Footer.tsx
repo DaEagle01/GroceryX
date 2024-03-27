@@ -13,7 +13,7 @@ const Footer = () => {
     return (
         <section className="border-t rounded-tr-md rounded-tl-md shadow-sm">
             <footer className="text-gray-600 body-font">
-                <div className="px-4 lg:px-20 py-20 max-w-[90rem] mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+                <div className="px-4 lg:px-20 py-10 sm:py-20 max-w-[90rem] mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
                     <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
                         <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
                             <Image src={logo} width={40} height={40} alt="GroceryX logo" />

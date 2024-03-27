@@ -6,15 +6,15 @@ const Hero = async () => {
     const response = await fetch(`${process.env.SERVER_URL}/api/v1/products`);
     const products = await response.json() as Product[];
     return (
-        <div className="max-w-[90rem] mx-auto pt-[5.5rem] pb-16 relative">
+        <div className="max-w-[90rem] mx-auto pt-[3rem] sm:pt-[5.5rem] pb-16 relative">
             <div className="flex flex-col justify-center items-center mb-8 w-full text-center sm:mb-16">
-                <h1 className="mb-1 text-4xl font-semibold md:text-5xl">
+                <h1 className="mb-1 text-2xl sm:text-4xl font-semibold md:text-5xl">
                     Sea’s Bounty, Your Kitchen.
                 </h1>
-                <h1 className="mb-9 text-4xl font-semibold md:text-5xl">
+                <h1 className="mb-6 sm:mb-9 text-2xl sm:text-4xl font-semibold md:text-5xl">
                     Delight in Every Dish!
                 </h1>
-                <p className="text-center mb-6 max-w-[48%] text-base text-[#636262] md:mb-12">
+                <p className="text-center mb-6 max-w-[85%] sm:max-w-[48%] text-base text-[#636262] md:mb-12">
                     GroceryX: Your online marketplace for all things fish! From the tranquility of rivers to the depths of oceans, we’ve got it all. Cast your net into our abundant selection and let your kitchen tell a delightful, fish-filled story!
                 </p>
                 <div className="flex items-center justify-center">
