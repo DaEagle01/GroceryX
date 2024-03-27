@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { categories, priceRanges, ratings } from "@/constants";
 import FilterHeader from "./FilterHeader";
 import { Checkbox } from "./ui/checkbox";
@@ -28,18 +28,15 @@ const AllProductFilter = () => {
         }
     }, [searchParams])
 
-    const createQueryString = useCallback(
-        (name: string, value: string) => {
-            const query = params.getAll(name);
-            if (query.length > 0 && query[0] === value) {
-                params.delete(name)
-            } else {
-                params.set(name, value)
-            }
-            return params.toString()
-        },
-        [searchParams]
-    )
+    const createQueryString = (name: string, value: string) => {
+        const query = params.getAll(name);
+        if (query.length > 0 && query[0] === value) {
+            params.delete(name)
+        } else {
+            params.set(name, value)
+        }
+        return params.toString()
+    };
 
     const handleFilterChange = (filterType: FilterType, value: string | number) => {
         setFilters(prevFilters => {
