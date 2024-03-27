@@ -10,7 +10,7 @@ import {
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
 import Image from 'next/image';
-import dummyFish from "../../../../public/dummyFish.svg";
+import dummyFish from "../../../../../public/dummyFish.svg";
 import ReviewStar from '@/components/ReviewStar';
 
 export async function generateStaticParams() {

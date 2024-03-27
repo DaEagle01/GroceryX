@@ -6,12 +6,12 @@ import TopCategories from "@/components/TopCategories";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Hero />
       <FlashSale />
       <TopCategories />
       <PopularProducts />
       <OurCustomerCompanies />
-    </div>
+    </>
   );
 }

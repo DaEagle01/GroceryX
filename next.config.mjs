@@ -7,7 +7,16 @@ const nextConfig = {
                 hostname: "**"
             }
         ]
-    }
+    },
+    async redirects() {
+        return [
+            {
+                source: '/dashboard',
+                destination: '/dashboard/all-products',
+                permanent: true,
+            }
+        ]
+    },
 };
 
 export default nextConfig;
