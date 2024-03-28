@@ -44,14 +44,20 @@ const Navbar = () => {
                                 <HiOutlineMenuAlt3 size={24} />
                             </button>
                         </SheetTrigger>
-                        <SheetContent className="w-1/2 z-[1000]">
-                            <ul className="menu p-4 w-full min-h-full text-base-content space-y-2">
+                        <SheetContent className="w-1/2 z-[1000] pt-10">
+                            <ul className="menu p-4 w-full min-h-full text-base-content space-y-3">
                                 {
                                     publicRoutes.map(route => (
-                                        <div key={route.path}>
-                                            <Link href={route.path} style={{ width: "100%" }} className={cn("text-xs lg:text-base font-semibold leading-5")}>{route.name}</Link>
-                                            <div className="w-full bg-gray-300 dark:bg-gray-100 h-[1px]"></div>
-                                        </div>
+                                        <Link key={route.path} href={route.path} className={cn("block w-full")}>
+                                            <SheetClose asChild className="w-full">
+                                                <div className="space-y-1">
+                                                    <p className="text-lg text-gray-700 font-semibold leading-5">
+                                                        {route.name}
+                                                    </p>
+                                                    <div className="w-full bg-gray-300 dark:bg-gray-100 h-[1px]"></div>
+                                                </div>
+                                            </SheetClose>
+                                        </Link>
                                     ))
                                 }
                             </ul>
