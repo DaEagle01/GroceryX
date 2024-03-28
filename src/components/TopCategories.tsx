@@ -26,7 +26,7 @@ const TopCategories = () => {
                     </Link>
                 ))}
             </div>
-            <Link href="/products">
+            <Link href="/fishes">
                 <Button className="font-semibold text-xl text-white bg-green-600 hover:bg-green-500 px6 py-4 mt-8 sm:mt-16 rounded-full flex mx-auto">
                     View All <ChevronRight className="ml-2" strokeWidth={3} />
                 </Button>
