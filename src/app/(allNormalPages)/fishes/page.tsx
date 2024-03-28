@@ -1,8 +1,8 @@
 import AllProductFilter from "@/components/AllProductFilter";
+import AllProductFilterResponsive from "@/components/AllProductFilterResponsive";
 import FilterHeader from "@/components/FilterHeader";
 import ProductCard from "@/components/shared/ProductCard";
 import { Product } from "@/types";
-import { headers } from 'next/headers';
 
 const Fishes = async ({
     params,
@@ -22,14 +22,15 @@ const Fishes = async ({
     const products = (await response.json()) as Product[];
 
     return (
-        <div className="max-w-[90rem] mx-auto px-4 lg:px-20 pt-8 pb-[230px]">
-            <div className="grid grid-cols-12 gap-8">
-                <div className="col-span-3">
+        <div className="max-w-[90rem] mx-auto px-4 lg:px-20 pt-8 pb-[100px] sm:pb-[230px]">
+            <div className="grid grid-cols-12 gap-0 sm:gap-8">
+                <div className="hidden sm:block sm:col-span-3">
                     <AllProductFilter />
                 </div>
-                <div className="col-span-9 ">
-                    <div className="flex items-center gap-8 mb-9">
-                        <h1 className="text-4xl font-bold">All Fishes</h1>
+                <div className="col-span-12 sm:col-span-9">
+                    <div className="flex justify-between items-center mb-9">
+                        <h1 className="text-2xl sm:text-4xl font-bold">All Fishes</h1>
+                        <AllProductFilterResponsive />
                     </div>
                     <div className="grid grid-cols-12 gap-7">
                         {products?.map((product) => (

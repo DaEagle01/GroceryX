@@ -26,6 +26,10 @@ const CountdownTimer = () => {
 
         const intervalId = setInterval(() => {
             setTime(prevTime => prevTime > 0 ? prevTime - 1 : 0);
+            setTime(prevTime => {
+                if (!prevTime) return 24 * 60 * 60;
+                else return prevTime > 0 ? prevTime - 1 : 0
+            })
         }, 1000);
 
         return () => clearInterval(intervalId);
@@ -36,7 +40,7 @@ const CountdownTimer = () => {
     const seconds = `${time % 60}`.padStart(2, '0');
 
     return (
-        <div className='bg-red-400 text-white font-semibold text-lg py-2 px-4 rounded-xl'>
+        <div className='bg-red-400 text-white font-semibold text-base sm:text-lg py-2 px-4 rounded-xl'>
             <span > Ends In: </span>
             <span>{hours}</span> : {" "}
             <span>{minutes}</span> : {" "}

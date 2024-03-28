@@ -27,7 +27,7 @@ const SingleFishDetail = async ({ params }: { params: { id: string } }) => {
     const response = await fetch(`${process.env.SERVER_URL}/api/v1/products/${id}`);
     const product = (await response.json()) as Product;
     return (
-        <div className="max-w-[90rem] mx-auto px-4 lg:px-20 pt-8 pb-[230px]">
+        <div className="max-w-[90rem] mx-auto px-4 lg:px-20 pt-8 pb-[100px] sm:pb-[230px]">
             <Breadcrumb>
                 <BreadcrumbList>
                     <BreadcrumbItem>
@@ -43,23 +43,23 @@ const SingleFishDetail = async ({ params }: { params: { id: string } }) => {
             </Breadcrumb>
             <div className='mt-5'>
                 <section className="text-gray-700 body-font overflow-hidden bg-white">
-                    <div className="pb-20 mx-auto">
+                    <div className="pb-10 sm:pb-20 mx-auto">
                         <div className="grid grid-cols-12 gap-4">
-                            <div className='col-span-6 flex justify-center relative'>
+                            <div className='col-span-12 sm:col-span-6 flex justify-center relative'>
                                 {product?.picturesUrls?.length ? (
-                                    <Image src={product?.picturesUrls[0] || dummyFish} width={500} height={532} alt="ecommerce" className=" w-[500px] h-[532px] object-cover object-center rounded border border-gray-200" />
+                                    <Image src={product?.picturesUrls[0] || dummyFish} width={500} height={532} alt="ecommerce" className=" w-[500px] h-full sm:h-[532px] object-contain object-center rounded border border-gray-200" />
                                 ) : (
-                                    <Image src={dummyFish} alt="ecommerce" className="object-cover object-center rounded border border-gray-200" />
+                                    <Image src={dummyFish} alt="ecommerce" className="object-contain object-center rounded border border-gray-200" />
                                 )}
                             </div>
-                            <div className="col-span-6 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+                            <div className="col-span-12 sm:col-span-6 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                                 <h2 className="text-sm title-font text-gray-500 tracking-widest">
                                     {product.category.replace(/-/g, ' ').split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
                                 </h2>
-                                <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
+                                <h1 className="text-gray-900 text-xl sm:text-3xl title-font font-medium mb-1">
                                     {product.name}
                                 </h1>
-                                <div className="flex mb-4">
+                                <div className="flex mb-2 sm:mb-4">
                                     <ReviewStar rating={product.rating} />
                                 </div>
                                 {product?.shortDesc && (
@@ -72,7 +72,7 @@ const SingleFishDetail = async ({ params }: { params: { id: string } }) => {
                                         ))}
                                     </p>
                                 )}
-                                <div className="flex items-center gap-4 mt-8">
+                                <div className="flex items-center gap-4 mt-4 sm:mt-8">
 
                                     <p className="title-font font-medium text-2xl text-gray-500 line-through">৳{product.mrp}</p>
                                     <p className="title-font font-medium text-2xl text-gray-900">৳{product.price}</p>

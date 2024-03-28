@@ -11,8 +11,8 @@ const FlashSalePage = async () => {
 
     return (
         <div className="max-w-[90rem] mx-auto px-4 lg:px-20 pt-8 pb-[230px]">
-            <div className="flex items-center gap-8 mb-9">
-                <h1 className="text-4xl font-bold">
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 mb-9">
+                <h1 className="text-2xl sm:text-4xl font-bold">
                     Flash Sale
                 </h1>
                 <CountdownTimer />

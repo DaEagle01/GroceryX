@@ -18,13 +18,13 @@ const AllProducts = async () => {
     const products = await response.json() as Product[];
     return (
         <>
-            <h1 className="text-3xl font-semibold text-gray-700 mb-7">All Products</h1>
+            <h1 className="text-2xl sm:text-3xl font-semibold text-gray-700 mb-5 sm:mb-7">All Products</h1>
             <div>
-                <Table>
+                <Table className="overflow-x-visible">
                     <TableCaption>A list of all your currently available products at GroceryX.</TableCaption>
                     <TableHeader>
                         <TableRow className="bg-green-200 hover:bg-green-100">
-                            <TableHead className="w-[100px]">SL No</TableHead>
+                            <TableHead className="w-[100px] text-nowrap">SL No</TableHead>
                             <TableHead>Item</TableHead>
                             <TableHead>Category</TableHead>
                             <TableHead className="text-right">Price</TableHead>
@@ -33,8 +33,8 @@ const AllProducts = async () => {
                     <TableBody>
                         {products.map((product) => (
                             <TableRow key={product.objectID} className="border">
-                                <TableCell className="font-medium">{product.objectID}</TableCell>
-                                <TableCell className="flex items-center gap-2">
+                                <TableCell className="font-medium p-2 sm:p-4">{product.objectID}</TableCell>
+                                <TableCell className="flex items-center gap-2 p-2 sm:p-4">
                                     <div className="w-[60px] h-[76px] relative">
                                         {product?.picturesUrls?.length ? (
                                             <Image src={product?.picturesUrls[0]} width={60} height={76} alt="fish image" className="w-[60px] h-[76px] object-contain object-center rounded" />

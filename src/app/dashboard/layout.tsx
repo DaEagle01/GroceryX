@@ -17,12 +17,12 @@ export default function DashboardLayout({
         <div>
             <DashboardNavbar />
             <div className="grid grid-cols-12">
-                <div className="col-span-3 h-[calc(100vh-64px)] pt-8">
+                <div className="hidden sm:block col-span-3 h-[calc(100vh-64px)] pt-8">
                     <div className="w-[25%] bg-green-50 h-[calc(100vh-64px)] fixed top-16 pt-6">
                         <DashboardSidebar />
                     </div>
                 </div>
-                <div className="col-span-9 bg-white py-7 px-8">
+                <div className="col-span-12 sm:col-span-9 bg-white py-7 px-4 sm:px-8">
                     {children}
                 </div>
             </div>
