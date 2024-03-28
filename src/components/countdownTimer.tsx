@@ -25,7 +25,6 @@ const CountdownTimer = () => {
         setTime(getStartTime());
 
         const intervalId = setInterval(() => {
-            setTime(prevTime => prevTime > 0 ? prevTime - 1 : 0);
             setTime(prevTime => {
                 if (!prevTime) return 24 * 60 * 60;
                 else return prevTime > 0 ? prevTime - 1 : 0
